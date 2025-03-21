@@ -75,8 +75,7 @@ El proyecto ha sido creado siguiendo una arquitectura en capas y se ha implement
 - **Bibliotecas adicionales**:
   - [JQuery](https://jquery.com/): Para el manejo de solicitudes y de JavaScript en el Front.
   - [Bootstrap](https://getbootstrap.com/): Para el diseño responsive.
-  - [Toastr](https://github.com/CodeSeven/toastr): Notificaciones.
-  - [JQuery-Confirm](https://craftpip.github.io/jquery-confirm/): Alertas elegantes.
+  - [JQuery-Confirm](https://craftpip.github.io/jquery-confirm/): Alertas con gran diseño.
   - [Font Awesome](https://fontawesome.com/): Iconos.
   - [DataTables](https://datatables.net/): Tablas dinámicas con Bootstrap 5.
 
