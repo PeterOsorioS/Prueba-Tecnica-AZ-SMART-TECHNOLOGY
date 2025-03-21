@@ -32,7 +32,7 @@ El proyecto se ha desarrollado usando ASP.NET MVC con C# y hace uso de SQL Serve
 
 - **Página Principal**:
   - Ver todos los libros que están registrados.
-  - Ver todos los libros que están registrados.
+  - Ver todos los autores que están registrados.
   - Incluye botones para operaciones CRUD (ver, editar, eliminar) sobre cada libro.
   - Muestra botones para agregar un nuevo libro o un nuevo autor.
 - **Crear de Libros**: Permite agregar libros proporcionando el título y seleccionando un autor existente. - **Crear de Autores**: Permite registrar nuevos autores mediante un formulario simple.
