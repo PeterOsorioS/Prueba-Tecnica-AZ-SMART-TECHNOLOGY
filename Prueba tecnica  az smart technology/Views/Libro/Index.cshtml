@@ -1,0 +1,82 @@
+﻿@using Entidades
+@model IEnumerable<Libro>
+
+@{
+    ViewData["Title"] = "Listado de Libros";
+}
+
+<div class="card mb-2 text-dark rounded shadow-sm">
+    <div class="card-header bg-light py-3 d-flex justify-content-between align-items-center">
+        <h4 class="weight-600 m-0">Lista de Libros</h4>
+
+        <div class="dropdown dropdown-center">
+            <button class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Agregar:
+            </button>
+            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <a asp-controller="Libro"
+                       asp-action="Crear"
+                       class="btn btn-dark btn-sm w-100 mb-1">
+                        <i class="fa-solid fa-book"></i> Agregar Libro
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Autor"
+                       asp-action="Crear"
+                       class="btn btn-success btn-sm w-100">
+                        <i class="fa-solid fa-feather"></i> Agregar Autor
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-body justify-content-center p-3 rounded shadow">
+        <div class="table-responsive rounded">
+            <table id="tbl" class="table-borderless table-hover w-100 table rounded">
+                <thead class="table-light">
+                    <tr>
+                        <th width="5%">#</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th class="text-center" width="15%">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var libro in Model)
+                        {
+                            <tr>
+                                <td>@libro.ID</td>
+                                <td>@libro.Titulo</td>
+                                <td>@libro.Autor.Nombre</td>
+                                <td>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-secondary ms-2" onclick="DetalleLibro(@libro.ID)">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <a class="btn btn-warning ms-2" asp-action="Actualizar" asp-route-id="@libro.ID">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <button class="btn btn-danger ms-2" onclick="Eliminar(@libro.ID)">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="ContenedorModalDetalleLibro"></div>
+@section Scripts{
+    <script src="~/js/Libro.js"></script>
+}
